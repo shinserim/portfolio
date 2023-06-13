@@ -1,0 +1,807 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KoreanIKRB';
+    src: url('fnot/KoreanIKR-B.eot');
+    src: url('fnot/KoreanIKR-B.eot?#iefix') format('embedded-opentype'),
+        url('fnot/KoreanIKR-B.woff2') format('woff2'),
+        url('fnot/KoreanIKR-B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins.eot');
+    src: url('font/Poppins.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins.woff2') format('woff2'),
+        url('font/Poppins.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Light.eot');
+    src: url('font/Poppins-Light.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-Light.woff2') format('woff2'),
+        url('font/Poppins-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Medium.eot');
+    src: url('font/Poppins-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-Medium.woff2') format('woff2'),
+        url('font/Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-SemiBold.eot');
+    src: url('font/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-SemiBold.woff2') format('woff2'),
+        url('font/Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Regular.eot');
+    src: url('font/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-Regular.woff2') format('woff2'),
+        url('font/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    background-color: #fff7f6;
+    font-family: 'Noto Sans KR';
+    min-width: 1920px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+    vertical-align: middle;
+
+}
+
+/* header */
+header {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    width: 615px;
+    height: 90px;
+}
+
+.hd_top {
+    width: 615px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.inner .hd_top::before {
+    content: '';
+    display: block;
+    background-color: #fff;
+    width: 106px;
+    height: 1.5px;
+    position: absolute;
+    top: 113px;
+    left: 510px;
+}
+.inner .hd_top li {
+    color: #fff;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+
+/* nav */
+.depth01 .depth02 {
+    position: absolute;
+    top: 120px;
+    left: 145px;
+    letter-spacing: -2px;
+    display: none;
+}
+.depth01:nth-child(2) .depth02 {
+    left: 259px;
+}
+.depth01:nth-child(3) .depth02 {
+    left: 400px;
+}
+.depth01:nth-child(2):hover .depth02 {
+    display: block;
+}
+.depth01 img {
+    padding-left: 90px;
+}
+.hd_top .depth02 li {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+.hd_top .depth02 li:first-child {
+    margin-top: 15px;
+}
+
+/* main_visual */
+.main_visual {
+    position: relative;
+    height: 100vh;
+}
+
+/* .main_visual div>p {
+    position: absolute;
+    bottom: 120px;
+    right: 45px;
+    color: #fff;
+    font-size: 20px;
+    transform: rotate(48deg);
+} */
+
+.main_visual figure {
+    width: 100%;
+    height: 100%;
+}
+
+.main_visual figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.paging img {
+    width: 11px;
+    height: 18px;
+   
+}
+
+.main_visual ul {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main_visual ul li {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 12px;
+    vertical-align: middle;
+    /* 가운데 세로정렬(인라인 요소 있을때) */
+    
+}
+
+.main_visual ul li:nth-child(1),
+.main_visual ul li:last-child {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    /* 투명한색 */
+    
+}
+
+.main_visual ul li:nth-child(2) {
+    border: #333 3px solid;
+    box-sizing: unset;
+
+}
+
+.main_visual ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cont01 {
+    width: 1920px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cont01 .list {
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont01 .list .item:nth-child(1) {
+    position: relative;
+}
+
+.cont01 .list .item div h2 {
+    margin-top: 84px;
+    font-size: 40px;
+    font-family: 'GowunBatang-Regular';
+    font-weight: 500;
+    line-height: 1.5;
+    position: relative;
+}
+
+.cont01 .list .item h2::before {
+    content: '';
+    width: 177px;
+    height: 1px;
+    position: absolute;
+    display: block;
+    top: 95%;
+    left: 0;
+    background-color: #000000;
+
+}
+
+.cont01 .list .item h3 {
+    margin: 58px 0;
+    line-height: 1.5;
+    font-size: 20px;
+    height: 40px;
+    font-weight: 300;
+}
+
+.cont01 .list .item h4 {
+    margin-bottom: 173px;
+    text-decoration: underline;
+    font-size: 16px;
+
+}
+
+.cont01 .list .item p {
+    height: 40px;
+}
+
+.cont01>ul {
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    font-size: 20px;
+
+}
+
+.cont01>ul li:nth-child(2) {
+    color: #7a7a7a;
+}
+
+.cont01 ul li:nth-child(1) {
+    margin-right: 47px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.cont01 .list .item:nth-child(1) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 550px;
+    width: 290px;
+
+}
+
+.cont01 .list .item:nth-child(2),
+.cont01 .list .item:nth-child(3) {
+    width: 452px;
+    height: 552px;
+   
+}
+
+.cont01 .list .item div:nth-child(2) p,
+.cont01 .list .item div:nth-child(3) p {
+    margin: 20px 0;
+    line-height: 1.3;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cont01 .list .item div:nth-child(2) span,
+.cont01 .list .item div:nth-child(3) span {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.cont01 .list .item figure {
+    width: 450px;
+    height: 450px;
+    position: relative;
+}
+
+.cont01 .item .arrow {
+    display: flex;
+    width: 290px;
+
+}
+
+.cont01 .item .left_arrow {
+    margin-right: 33px;
+}
+.cont01 .list .item:nth-child(2) figure .img_after {
+    opacity: 0;
+    /* img.img_after=> .을 붙여서 쓰면 클래스명의 선택자를 뜻한다는 말  */
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.cont01 .list .item:nth-child(2):hover .img_after {
+    transition: 0.7s;
+    opacity: 1;
+}
+
+/* .cont02 */
+
+.cont02 {
+    width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../img/cont02_backcolor.jpg");
+}
+
+.cont02 .title {
+    text-align: center;
+}
+
+.cont02 .title h2 {
+    font-family: 'GowunBatang-Regular';
+    font-weight: 500;
+    font-size: 40px;
+    position: relative;
+}
+
+.cont02 .title p {
+    margin: 26px 0;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.cont02 .title h4 {
+    margin-bottom: 60px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.cont02 .title h2::before {
+    content: '';
+    width: 215px;
+    height: 1px;
+    position: absolute;
+    display: block;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+
+}
+
+.cont02 .list {
+    display: flex;
+    justify-content: space-between;
+    width: 1720px;
+    margin: 0 auto;
+}
+
+.cont02 .list .item {
+    width: 410px;
+    height: 510px;
+    border: #fff 1px solid;
+    position: relative;
+
+}
+
+.cont02>figure img:nth-child(1) {
+    position: absolute;
+    top: 58%;
+    left: 34px;
+}
+
+.cont02>figure img:nth-child(2) {
+    position: absolute;
+    top: 58%;
+    right: 34px;
+}
+.cont02 .list .item>figure {
+    position: relative;
+
+}
+
+.cont02 .list .item figure {
+    height: 100%;
+    width: 100%;
+}
+
+.cont02 .list .item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cont02 strong {
+    width: 100%;
+    font-family: 'TmonMonsori';
+    font-size: 40px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    display: none;
+
+}
+
+.cont02 .list .item:nth-child(1):hover strong {
+    display: block;
+
+}
+
+.cont02 .list .item:nth-child(1)::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.511);
+    display: none;
+}
+
+.cont02 .list .item:nth-child(1):hover::before {
+    display: block;
+}
+
+/* .cont03 */
+.cont03 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cont03 .list {
+    display: flex;
+    justify-content: flex-end;
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.cont03 .list .item {
+    height: 467px;
+    position: relative;
+}
+
+.cont03 .list .item h2::before {
+    content: '';
+    width: 243px;
+    height: 1px;
+    position: absolute;
+    display: block;
+    top: 33%;
+    left: 0;
+    background-color: #000000;
+
+}
+
+.cont03 .list .item:nth-child(1) {
+    width: 380px;
+    height: 465px;
+}
+
+.cont03 .list .item:nth-child(2) {
+    margin-right: 20px;
+    width: 780px;
+    height: 465px;
+}
+.cont03 .list .item figure:nth-child(2) img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+}
+.cont03 .list .item div {
+    letter-spacing: -0.8px;
+}
+
+.cont03>h4 {
+    margin-left: 336px;
+    font-size: 20px;
+}
+
+.cont03 h2 {
+    margin: 108px 0 85px;
+    font-size: 40px;
+    font-family: 'GowunBatang-Regular';
+    font-weight: 500;
+}
+
+.cont03 p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.cont03 p:nth-of-type(2) {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px 0 50px;
+}
+
+.cont03 h4:nth-child(4) {
+    text-decoration: underline;
+    margin-bottom: 28px;
+}
+
+.cont03 .arrow {
+    display: flex;
+    position: relative;
+}
+
+.cont03 .left_arrow {
+    margin-right: 35px;
+}
+
+.cont03 .item::before {
+    content: '';
+    width: 95px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cont03 figure {
+    width: 100%;
+    height: 100%;
+}
+
+.cont03 figure img {
+    width: 100%;
+    height: 465px;
+}
+
+.cont03 .list .item span {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: 'TmonMonsori';
+    font-size: 50px;
+    white-space: nowrap;
+}
+.cont03 .list .item h4::before {
+    content: '';
+    width: 96px;
+    height: 3px;
+    display: block;
+    background-color: #000000;
+    position: absolute;
+   bottom: -15%;
+    left: 0;
+}
+.cont03 .list .item h4::after {
+    content: '';
+    width:1264px;
+    height: 3px;
+    display: block;
+    background-color:#b4b4b4;
+    position: absolute;
+    bottom: -15%;
+    left: 96px;
+
+}
+/* .instargram */
+.instargram {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.instargram .title {
+    text-align: center;
+}
+
+.instargram .title h2 {
+    font-size: 40px;
+    font-family: 'GowunBatang-Regular';
+    font-weight: 500;
+    position: relative;
+}
+
+.instargram .title h2::before {
+    content: '';
+    width: 190px;
+    height: 1.5px;
+    position: absolute;
+    display: block;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000000;
+}
+
+.instargram .title p {
+    margin: 40px 0;
+    font-size: 20px;
+}
+
+.instargram .list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #b4b4b4 solid 1px;
+}
+
+.instargram .list .item {
+    position: relative;
+}
+.instargram .list .item figure {
+    width: 100%;
+    height: 100%;
+}
+.instargram .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.instargram .list .item:nth-child(1)::before {
+    content: '';
+    width: 320px;
+    height: 150px;
+    background-color: #ffffffcf;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: 1s;
+}
+.instargram .list .item h4 {
+    position: absolute;
+    top: 192px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    
+}
+.instargram .list .item p {
+    width: 222px;
+    position: absolute;
+    top: 222px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    line-height: 1.3;
+    font-size: 15px;
+    font-family: 'Poppins';
+}
+.hover_text {
+    opacity: 0;
+    
+    transition: 1s;
+}
+.instargram .list .item:nth-child(1):hover::before {
+    opacity: 1;
+}
+.instargram .list .item:nth-child(1):hover .hover_text {
+    opacity: 1;
+}
+.vidio {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+}
+/* .footer */
+.footer {
+    width: 1253px;
+    margin: 0 auto;
+}
+.footer_inner {
+    margin-top: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_sns {
+    display: flex;
+    justify-content: space-between;
+    width: 195px;
+}
+.footer_inner .footer_list01 p {
+    margin: 22px 0;
+    font-size: 13px;
+    font-weight: 300;
+}
+.footer_box {
+    position: relative;
+    font-family: 'Poppins';
+}
+.footer_box p {
+    border: #333 1px solid;
+    width: 194px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.footer_box img {
+    position:absolute;
+    top: 45%;
+    left: 40%;
+}
+.footer_list02 p:first-child,
+.footer_list03 p:first-child {
+    margin-bottom: 35px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.footer_list02 p:nth-child(2),
+.footer_list03 p:nth-child(2) {
+    line-height: 2.2;
+    margin-bottom: 138px;
+}
+

@@ -1,0 +1,135 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'KoreanIKRB';
+    src: url('fnot/KoreanIKR-B.eot');
+    src: url('fnot/KoreanIKR-B.eot?#iefix') format('embedded-opentype'),
+        url('fnot/KoreanIKR-B.woff2') format('woff2'),
+        url('fnot/KoreanIKR-B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins.eot');
+    src: url('font/Poppins.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins.woff2') format('woff2'),
+        url('font/Poppins.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Light.eot');
+    src: url('font/Poppins-Light.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-Light.woff2') format('woff2'),
+        url('font/Poppins-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Medium.eot');
+    src: url('font/Poppins-Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-Medium.woff2') format('woff2'),
+        url('font/Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-SemiBold.eot');
+    src: url('font/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-SemiBold.woff2') format('woff2'),
+        url('font/Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Regular.eot');
+    src: url('font/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/Poppins-Regular.woff2') format('woff2'),
+        url('font/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    line-height: 1;
+    background-color: #fbf2ea;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+
+}
+/* header */
+header {
+    width: 100%;
+    height: 100px;
+    background-color: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+.inner nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* main_visual */
+.cont01 {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.main_visual {
+    margin-bottom: 150px;
+    position: relative;
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 .list {
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
