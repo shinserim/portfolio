@@ -189,7 +189,7 @@ nav {
 
 nav ul {
   text-align: center;
-  margin-left: 500px;
+  margin-left: 540px;
   font-weight: 400;
   font-size: 20px;
   font-family: 'Montserrat';
@@ -833,7 +833,7 @@ nav ul li a {
 }
 
 .last {
-  background: url('../img/배경img3.jpG') center center / cover no-repeat;
+  background: url('../img/배경img3.jpg') center center / cover no-repeat;
   height: 1700px;
 }
 
