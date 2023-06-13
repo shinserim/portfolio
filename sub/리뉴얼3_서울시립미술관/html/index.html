@@ -9,24 +9,112 @@
     <link href="css/서울시립미술관.css" rel="stylesheet" />
 </head>
 <script src="lib/jquery-3.7.0.min.js"></script>
-     <script>
-        $(function(){
+<script>
+    $(function () {
         let menuBtn = $('.left_menu li');
-        menuBtn.click(function(){
+        menuBtn.click(function () {
             //클래스명 추가 -> addClass()
             //클래스명 삭제 -> removeClass();
             //menuBtn.addClass('on')
             menuBtn.removeClass('on');
-            $(this).addClass('on') //내가 클린한 곳만 on이 붙음
-           
+            $(this).addClass('on') //내가 클릭한 곳만 on이 붙음
+
         })
 
         //내가 클릭한 요소만 클래스명 추가
         //모든 li는 클래스명 삭제
 
-        })//jquery end
+        let menu = $('nav li');
+        menu.click(function () {
+            let menuIndex = $(this).index();
+            console.log(menuIndex)
+            let contPage = $('.cont').eq(menuIndex);
+            let contPageTop = contPage.offset().top;
+            //.cont가 브라우저 상단에서 얼마만큼 떨어졌는지
+            //값 구하기 = > offset().top;
+            //scrollTop => 스크롤바의 수직값
+            $('html, body').animate({
+                scrollTop: contPageTop
+            }, 700, easeOutBounce) //쉼표 찍고 원하는 시간, 속도 설정
+        })//menu.click
 
-     </script>
+
+        let hd = $('header');
+        let leftM = $('.left_menu li');
+        let headerTop = leftM.offset().top;
+        console.log(headerTop) //0
+        $(window).scroll(function () {
+            let scrollBar = $(window).scrollTop();
+            //스크롤바의 y축값(세로로 움직이는 값)
+
+            //화면을 스크롤했을 때 실행
+            //header가 가지는 값보다
+            //스크롤바가 가지는 값이 더 클 떄
+            //header에게 클래스면 on추가
+            if (headerTop < scrollBar) {
+                hd.addClass('on');
+            }
+            else {
+                hd.removeClass('on');
+            }
+            //스크롤 했을 때 각 cont에게 스크롤이 들어오면
+            //nav li 에게 클래스명 제어
+
+            if ($('.main_visual').offset().top <= scrollBar) {
+                leftM.removeClass('on')
+                leftM.eq(0).addClass('on');
+            }
+            else {
+                leftM.removeClass('on')
+
+            }
+            if ($('.cont01').offset().top <= scrollBar) {
+                leftM.removeClass('on')
+                leftM.eq(1).addClass('on');
+            }
+
+            if ($('.cont03').offset().top <= scrollBar) {
+                leftM.removeClass('on')
+                leftM.eq(2).addClass('on');
+            }
+
+            if ($('.cont04').offset().top <= scrollBar) {
+                leftM.removeClass('on')
+                leftM.eq(3).addClass('on');
+            }
+
+            if ($('.cont06').offset().top <= scrollBar) {
+                leftM.removeClass('on')
+                leftM.eq(4).addClass('on');
+            }
+
+        })//scroll()
+
+        // let menuList = $('.cont03');
+        // let bar = $('li');
+        // let item = $('.list');
+
+        // menu.click(function () {
+        //     //1. bar의 위치이동
+        //     //menu가 가지는 위치값 만큼
+        //     //bar의 left값으로 적용
+
+        //     let moveLeft = $(this).position().left;
+        //     bar.animate({
+        //         'left': moveLeft
+        //     })
+
+        //     //item에게 클래스명 제어
+        //     //내가 클릭한 menu의 index순서값을 찾아서
+        //     // 그 순서에 맞춰
+        //     //item에게 클래스명 추가
+        //     item.removeClass('on')
+        //     item.eq($(this).index()).addClass('on');
+
+        // })//menu.cilck end
+
+    })//jquery end
+</script>
 <script>
     window.onload = function () {
         let cont03 = document.getElementsByClassName('cont03')[0];
@@ -65,10 +153,11 @@
             if (scrollBar > mainVisual.clientHeight - 1) {
                 hd.style.display = 'none'
                 leftMenu.style.opacity = '1'
-                leftMenu.style.transition = '0.5s' 
+                leftMenu.style.transition = '0.5s'
             } else {
                 hd.style.display = 'block'
                 leftMenu.style.opacity = '-1'
+
             }
 
             for (let i = 0; i < cont04Item.length; i++) {
@@ -87,63 +176,63 @@
                 fxIcon.style.display = 'none'
             }
 
-       
-    }//onscroll
-    // let cont01 = document.getElementsByClassName('cont01')[0];
-    let cont01Item = cont01.getElementsByClassName('list');
-    let cont01Prev = cont01.getElementsByClassName('arrow_left')[0];
-    let cont01Next = cont01.getElementsByClassName('arrow_right')[0];
-    let i = 0;
+
+        }//onscroll
+        // let cont01 = document.getElementsByClassName('cont01')[0];
+        let cont01Item = cont01.getElementsByClassName('list');
+        let cont01Prev = cont01.getElementsByClassName('arrow_left')[0];
+        let cont01Next = cont01.getElementsByClassName('arrow_right')[0];
+        let i = 0;
 
 
-    cont01Next.onclick = function () {
-        i++;
-        if (i >= cont01Item.length) {
-            i = cont01Item.length - 1
+        cont01Next.onclick = function () {
+            i++;
+            if (i >= cont01Item.length) {
+                i = cont01Item.length - 1
+            }
+            cont01Item[0].classList.remove('on');
+            cont01Item[1].classList.remove('on');
+
+            cont01Item[i].classList.add('on');
         }
-        cont01Item[0].classList.remove('on');
-        cont01Item[1].classList.remove('on');
 
-        cont01Item[i].classList.add('on');
-    }
+        cont01Prev.onclick = function () {
+            i--;
+            if (i <= 0) {
+                i = 0
+            }
+            cont01Item[0].classList.remove('on');
+            cont01Item[1].classList.remove('on');
 
-    cont01Prev.onclick = function () {
-        i--;
-        if (i <= 0) {
-            i = 0
+            cont01Item[i].classList.add('on');
         }
-        cont01Item[0].classList.remove('on');
-        cont01Item[1].classList.remove('on');
+        let cont02 = document.getElementsByClassName('cont02')[0];
+        let cont02Item = cont02.getElementsByClassName('list');
 
-        cont01Item[i].classList.add('on');
-    }
-    let cont02 = document.getElementsByClassName('cont02')[0];
-    let cont02Item = cont02.getElementsByClassName('list');
+        let cont02Prev = cont02.getElementsByClassName('arrow_left')[0];
+        let cont02Next = cont02.getElementsByClassName('arrow_right')[0];
+        cont02Next.onclick = function () {
+            i++;
+            if (i >= cont02Item.length) {
+                i = cont02Item.length - 1
+            }
+            cont02Item[0].classList.remove('on');
+            cont02Item[1].classList.remove('on');
 
-    let cont02Prev = cont02.getElementsByClassName('arrow_left')[0];
-    let cont02Next = cont02.getElementsByClassName('arrow_right')[0];
-    cont02Next.onclick = function () {
-        i++;
-        if (i >= cont02Item.length) {
-            i = cont02Item.length - 1
+            cont02Item[i].classList.add('on');
         }
-        cont02Item[0].classList.remove('on');
-        cont02Item[1].classList.remove('on');
 
-        cont02Item[i].classList.add('on');
-    }
+        cont02Prev.onclick = function () {
+            i--;
+            if (i <= 0) {
+                i = 0
+            }
+            cont02Item[0].classList.remove('on');
+            cont02Item[1].classList.remove('on');
 
-    cont02Prev.onclick = function () {
-        i--;
-        if (i <= 0) {
-            i = 0
+            cont02Item[i].classList.add('on');
         }
-        cont02Item[0].classList.remove('on');
-        cont02Item[1].classList.remove('on');
 
-        cont02Item[i].classList.add('on');
-    }
-       
     }//window.onload
 
 </script>
@@ -663,45 +752,45 @@
                 </div><!-- .item end 4 -->
             </div><!-- .box02 end -->
             <footer>
-            <div class="box03">
-                <div class="item">
-                    <ul>
-                        <li><a href="#"><img src="img/Vector.png" alt="페이스북" /></a></li>
-                        <li><a href="#"><img src="img/Vector-1.png" alt="트위터" /></a></li>
-                        <li><a href="#"><img src="img/Group 4.png" alt="인스타" /></a></li>
-                        <li><a href="#"><img src="img/Vector-4.png" alt="유튜브" /></a></li>
-                        <li><a href="#"><img src="img/Group 5.png" alt="네이버" /></a></li>
-                        <li><a href="#"><img src="img/Vector-8.png" alt="블로그" /></a></li>
-                    </ul>
-                    </a>
-                </div><!-- .item end 1 -->
-                <div class="item">
-                    <a href="#">
-                        <p>서울 중구 덕수궁길 61</p>
-                        <p>02–120, 02–2124–8800</p>
-                        <p>매주 월요일 휴관, 정기휴관(1월 1일)</p>
-                        <p>운영시간 | 직원정보</p>
-                        <p>소통창구 응답소</p>
-                    </a>
-                </div><!-- .item end 2 -->
-                <div class="item">
-                    <a href="#">
-                        <strong>개인정보처리방침</strong>
-                        <p>접근성 안내</p>
-                        <p>이메일무단수집거부</p>
-                        <p>함께한 사람들</p>
-                    </a>
-                </div><!-- .item end 3 -->
-                <div class="item">
-                    <a href="#">
-                        <figure>
-                            <img src="img/image 29.png" alt="" />
-                            <img src="img/image 30.png" alt="" />
-                        </figure>
-                    </a>
-                </div><!-- .item end 4 -->
-            </div><!-- .box03 end -->
-        </footer>
+                <div class="box03">
+                    <div class="item">
+                        <ul>
+                            <li><a href="#"><img src="img/Vector.png" alt="페이스북" /></a></li>
+                            <li><a href="#"><img src="img/Vector-1.png" alt="트위터" /></a></li>
+                            <li><a href="#"><img src="img/Group 4.png" alt="인스타" /></a></li>
+                            <li><a href="#"><img src="img/Vector-4.png" alt="유튜브" /></a></li>
+                            <li><a href="#"><img src="img/Group 5.png" alt="네이버" /></a></li>
+                            <li><a href="#"><img src="img/Vector-8.png" alt="블로그" /></a></li>
+                        </ul>
+                        </a>
+                    </div><!-- .item end 1 -->
+                    <div class="item">
+                        <a href="#">
+                            <p>서울 중구 덕수궁길 61</p>
+                            <p>02–120, 02–2124–8800</p>
+                            <p>매주 월요일 휴관, 정기휴관(1월 1일)</p>
+                            <p>운영시간 | 직원정보</p>
+                            <p>소통창구 응답소</p>
+                        </a>
+                    </div><!-- .item end 2 -->
+                    <div class="item">
+                        <a href="#">
+                            <strong>개인정보처리방침</strong>
+                            <p>접근성 안내</p>
+                            <p>이메일무단수집거부</p>
+                            <p>함께한 사람들</p>
+                        </a>
+                    </div><!-- .item end 3 -->
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/image 29.png" alt="" />
+                                <img src="img/image 30.png" alt="" />
+                            </figure>
+                        </a>
+                    </div><!-- .item end 4 -->
+                </div><!-- .box03 end -->
+            </footer>
         </div><!-- .sitemap end -->
     </section><!-- .cont06 end -->
     <div class="fixed_icon">
