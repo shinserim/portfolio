@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang=ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울시립미술관</title>
+    <link href="css/서울시립미술관.css" rel="stylesheet" />
+</head>
+<script src="lib/jquery-3.7.0.min.js"></script>
+     <script>
+        $(function(){
+        let menuBtn = $('.left_menu li');
+        menuBtn.click(function(){
+            //클래스명 추가 -> addClass()
+            //클래스명 삭제 -> removeClass();
+            //menuBtn.addClass('on')
+            menuBtn.removeClass('on');
+            $(this).addClass('on') //내가 클린한 곳만 on이 붙음
+           
+        })
+
+        //내가 클릭한 요소만 클래스명 추가
+        //모든 li는 클래스명 삭제
+
+        })//jquery end
+
+     </script>
+<script>
+    window.onload = function () {
+        let cont03 = document.getElementsByClassName('cont03')[0];
+        let menuBtn = cont03.getElementsByTagName('li');
+        let cont03List = cont03.getElementsByClassName('list');
+
+        for (let i = 0; i < menuBtn.length; i++) {
+            menuBtn[i].onclick = function () {
+
+                cont03List[0].classList.remove('on');
+                cont03List[1].classList.remove('on');
+                cont03List[2].classList.remove('on');
+
+                cont03List[i].classList.add('on');
+
+
+                menuBtn[0].classList.remove('on');
+                menuBtn[1].classList.remove('on')
+                menuBtn[2].classList.remove('on')
+
+                menuBtn[i].classList.add('on')
+            }
+        }
+        let cont04 = document.getElementsByClassName('cont04')[0];
+        let cont04Item = cont04.getElementsByClassName('item');
+        let hd = document.getElementsByTagName('header')[0];
+        let leftMenu = document.getElementsByClassName('left_menu')[0];
+        let mainVisual = document.getElementsByClassName('main_visual')[0];
+        let cont01 = document.getElementsByClassName('cont01')[0];
+        let fxIcon = document.getElementsByClassName('fixed_icon')[0];
+        fxIcon.style.display = 'none'
+
+        window.onscroll = function () {
+            let scrollBar = window.scrollY; // 스크롤되는 Y축값
+            leftMenu.style.opacity = '-1';
+            if (scrollBar > mainVisual.clientHeight - 1) {
+                hd.style.display = 'none'
+                leftMenu.style.opacity = '1'
+                leftMenu.style.transition = '0.5s' 
+            } else {
+                hd.style.display = 'block'
+                leftMenu.style.opacity = '-1'
+            }
+
+            for (let i = 0; i < cont04Item.length; i++) {
+                if (cont04.offsetTop - 500 <= scrollBar) {
+                    cont04Item[i].classList.add('on' + i);
+                } else {
+                    cont04Item[i].classList.remove('on' + i);
+                }
+            }
+
+
+            console.log(scrollBar);
+            if (cont01.offsetTop - 500 <= scrollBar) {
+                fxIcon.style.display = 'block'
+            } else {
+                fxIcon.style.display = 'none'
+            }
+
+       
+    }//onscroll
+    // let cont01 = document.getElementsByClassName('cont01')[0];
+    let cont01Item = cont01.getElementsByClassName('list');
+    let cont01Prev = cont01.getElementsByClassName('arrow_left')[0];
+    let cont01Next = cont01.getElementsByClassName('arrow_right')[0];
+    let i = 0;
+
+
+    cont01Next.onclick = function () {
+        i++;
+        if (i >= cont01Item.length) {
+            i = cont01Item.length - 1
+        }
+        cont01Item[0].classList.remove('on');
+        cont01Item[1].classList.remove('on');
+
+        cont01Item[i].classList.add('on');
+    }
+
+    cont01Prev.onclick = function () {
+        i--;
+        if (i <= 0) {
+            i = 0
+        }
+        cont01Item[0].classList.remove('on');
+        cont01Item[1].classList.remove('on');
+
+        cont01Item[i].classList.add('on');
+    }
+    let cont02 = document.getElementsByClassName('cont02')[0];
+    let cont02Item = cont02.getElementsByClassName('list');
+
+    let cont02Prev = cont02.getElementsByClassName('arrow_left')[0];
+    let cont02Next = cont02.getElementsByClassName('arrow_right')[0];
+    cont02Next.onclick = function () {
+        i++;
+        if (i >= cont02Item.length) {
+            i = cont02Item.length - 1
+        }
+        cont02Item[0].classList.remove('on');
+        cont02Item[1].classList.remove('on');
+
+        cont02Item[i].classList.add('on');
+    }
+
+    cont02Prev.onclick = function () {
+        i--;
+        if (i <= 0) {
+            i = 0
+        }
+        cont02Item[0].classList.remove('on');
+        cont02Item[1].classList.remove('on');
+
+        cont02Item[i].classList.add('on');
+    }
+       
+    }//window.onload
+
+</script>
+
+<body>
+    <section class="banner">
+        <h2>
+            <a href="#">
+                <img src="img/seoul-logo-white 2.png" alt="서울시로고" />
+            </a>
+        </h2>
+        <div>
+            <img src="img/seoul-notice 2.png" alt="말풍선아이콘" />
+            <p>20만원 '서울청년문화패스' 신청하세요…지원대상은?</p>
+        </div>
+        <ul class="right_menu">
+            <li><a href="#">서울소식</a></li>
+            <li><a href="#">응답소</a></li>
+            <li><a href="#">정보공개</a></li>
+            <li><a href="#">분야별정보</a></li>
+        </ul><!-- .right_menu end -->
+    </section><!-- .banner end -->
+    <section class="hd960px">
+        <div class="logo">
+            <a href="#">
+                <img src="img/o_typo_w.svg" alt="로고" />
+            </a>
+        </div><!-- .logo end -->
+        <div class="menu_icon">
+            <img src="img/🦆 icon _menu_.png" alt="메뉴 아이콘" />
+        </div><!-- .menu_icon end -->
+    </section><!-- .hd960px end -->
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    <img src="img/Group.png" alt="미술관로고" />
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">전시와 프로그램</a></li>
+                    <li><a href="#">지식과 연구</a></li>
+                    <li><a href="#">방문하기</a></li>
+                    <li><a href="#"><span>로그인</span></a></li>
+                    <li><a href="#"><span>사이트맵</span></a></li>
+                    <li><a href="#">EN</a></li>
+                </ul>
+            </nav>
+        </div><!-- .inner end -->
+    </header>
+    <section class="main_visual" id="page1">
+        <video autoplay muted loop>
+            <source src="img/main_video.mp4" type="video/mp4" />
+        </video>
+        <div>
+            <h3>
+                <a href="#">《에드워드 호퍼: 길 위에서》 전시 예약 바로가기</a>
+            </h3>
+            <a href="#">
+                <img src="img/Group 3.png" alt="바로가기 화살표" />
+            </a>
+        </div>
+    </section><!-- .main_visual end -->
+    <div class="left_menu">
+        <img src="img/그림로고.png" alt="그림로고" />
+        <ul>
+            <li class="on"><a href="#page1">HOME</a></li>
+            <li><a href="#page2">전시와 프로그램</a></li>
+            <li><a href="#page3">지식과 연구</a></li>
+            <li><a href="#page4">방문하기</a></li>
+            <li><a href="#page5"><span>사이트맵</span></a></li>
+            <li><a href="#"><span>로그인</span></a></li>
+            <li><a href="#">EU</a></li>
+        </ul>
+    </div><!-- .left_menu end -->
+    <section class="cont01" id="page2">
+        <div class="title">
+            <p>이번주 전시와 참여프로그램</p>
+            <h4>전시</h4>
+        </div><!-- .title end -->
+        <div class="list on">
+            <div class="item">
+                <div>
+                    <a href="#"><span> 최민컬렉션: 다르게 보기</span></a>
+                    <p>전시</p>
+                    <p>서울시립미술관 서소문본관</p>
+                    <p>2022/12/08~2023/05/07</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (1).png" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 1-->
+            <div class="item">
+                <div>
+                    <a href="#"><span>터치미텔</span></a>
+                    <p>전시</p>
+                    <p>서울시립 북서울미술관</p>
+                    <p>2023/04/04~2023/10/01</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (2).png" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 2-->
+            <div class="item">
+                <div>
+                    <a href="#"><span>《에드워드 호퍼: 길 위에서》</span></a>
+                    <p>전시</p>
+                    <p>서울시립미술관 서소문본관</p>
+                    <p>2023/04/20~2023/08/20</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (3).png" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 3-->
+        </div><!-- .list end 1-->
+        <div class="list">
+            <div class="item">
+                <div>
+                    <a href="#"><span> 이제 어떻게 하시겠습니까?</span></a>
+                    <p>전시</p>
+                    <p>서울시립 북서울미술관</p>
+                    <p>2023/04/25~2023/07/0</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-2.jpg" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 1-->
+            <div class="item">
+                <div>
+                    <a href="#"><span>아카이브 하이라이트: 김용익, 김차섭, 임동식</span></a>
+                    <p>전시</p>
+                    <p>서울시립 미술아카이브</p>
+                    <p>2023/04/03~2023/07/30</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-1.jpg" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 2-->
+            <div class="item">
+                <div>
+                    <a href="#"><span>영원한 나르시시스트, 천경자</span></a>
+                    <p>전시</p>
+                    <p>서울시립미술관 서소문본관</p>
+                    <p>상시</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group.jpg" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 3-->
+        </div><!-- .list end 2-->
+        <div class="arrow">
+            <div class="arrow_left">
+                <img src="img/왼쪽화살.png" alt="" />
+            </div><!-- .arrow_left end -->
+            <div class="arrow_right">
+                <img src="img/오른쪽화살.png" alt="" />
+            </div><!-- .right end -->
+        </div><!-- .arrow end -->
+    </section><!-- .cont01 end -->
+    <section class="cont02">
+        <div class="title">
+            <h4>프로그램</h4>
+        </div><!-- .title end -->
+        <div class="list on">
+            <div class="item">
+                <div>
+                    <a href="#"><span>[예술가의 런치박스] 고휘 ‘소리 오브젝트와 파라메트릭 푸드’</span></a>
+                    <p>교육프로그램</p>
+                    <p>서울시립 미술아카이브</p>
+                    <p>2023/05/19</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group.png" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 1 -->
+            <div class="item">
+                <div>
+                    <a href="#"><span>전시연계 영화상영프로그램〈이미지의
+                            두께〉</span></a>
+                    <p>문화행사</p>
+                    <p>서울시립 미술아카이브</p>
+                    <p>2023/04/21~2023/05/132023/05/10까지 모집</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-2.png" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 2 -->
+            <div class="item">
+                <div>
+                    <a href="#"><span>1950년대 이후 한국 현대미술</span></a>
+                    <p>교육프로그램</p>
+                    <p>서울시립 북서울미술관</p>
+                    <p>2023/05/10~2023/06/302023/06/26 까지 모집</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-1.png" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 3 -->
+        </div><!-- .list end 1-->
+        <div class="list">
+            <div class="item">
+                <div>
+                    <a href="#"><span>[학급] < PLAY! 터치미텔!> (4~5월)</span></a>
+                    <p>교육프로그램</p>
+                    <p>서울시립 북서울미술관</p>
+                    <p>2023/04/26~2023/05/312023/05/31까지 모집</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group3333.jpg" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 1 -->
+            <div class="item">
+                <div>
+                    <a href="#"><span>《명랑 학문, 유쾌한 지식, 즐거운 앎》
+                            전시연계 프로그램 지역문화연계특강</span></a>
+                    <p>문화행사</p>
+                    <p>서울시립 미술아카이브</p>
+                    <p>2023/05/10~2023/05/12모집완료</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group1111.jpg" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 2 -->
+            <div class="item">
+                <div>
+                    <a href="#"><span>[학급] <좌표를 설계하세요> </span></a>
+                    <p>교육프로그램</p>
+                    <p>서울시립 북서울미술관</p>
+                    <p>2023/05/25~2023/07/072023/05/18까지 모집</p>
+                </div>
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group2222.jpg" alt="" />
+                    </figure>
+                </a>
+            </div><!-- .item end 3 -->
+        </div><!-- .list end -->
+        <div class="arrow">
+            <div class="arrow_left">
+                <img src="img/왼쪽화살.png" alt="" />
+            </div><!-- .arrow_left end -->
+            <div class="arrow_right">
+                <img src="img/오른쪽화살.png" alt="" />
+            </div><!-- .right end -->
+        </div><!-- .arrow end -->
+    </section><!-- .cont02 end -->
+    <section class="cont03" id="page3">
+        <div class="title">
+            <p>지식과 연구</p>
+            <h4>SeMA 소장품 <strong>서울시립미술관이 소장한 작품 <span> 5690</span> 점 을 살펴보세요.</strong></h4>
+        </div><!-- .title end -->
+        <ul class="menu">
+            <li class="on">전체</li>
+            <li>신 소장품</li>
+            <li>하이라이트</li>
+        </ul><!-- .menu end -->
+        <div class="list on">
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group111.png" alt="" />
+                    </figure>
+                    <div>
+                        <span>Untitled-Jarack</span>
+                        <p>임충섭</p>
+                        <p>2016</p>
+                    </div>
+                </a>
+            </div><!-- .item end 1 -->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-222.png" alt="" />
+                    </figure>
+                    <div>
+                        <span>이어진 산수#2 (캡쳐, 패치, 픽쳐)</span>
+                        <p>전혜림</p>
+                        <p>2021</p>
+                    </div>
+                </a>
+            </div><!-- .item end 2 -->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-333.png" alt="" />
+                    </figure>
+                    <div>
+                        <span>자화상</span>
+                        <p>정강자</p>
+                        <p>1992</p>
+                    </div>
+                </a>
+            </div><!-- .item end 3 -->
+        </div><!-- .list end 1-->
+        <div class="list">
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (3).jpg" alt="" />
+                    </figure>
+                    <div>
+                        <span>파리 노틀담사원</span>
+                        <p>박광진1975</p>
+                        <p>2016</p>
+                    </div>
+                </a>
+            </div><!-- .item end 1 -->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (4).jpg" alt="" />
+                    </figure>
+                    <div>
+                        <span>자연의 소리 2021-10-A</span>
+                        <p>박광진</p>
+                        <p>2021</p>
+                    </div>
+                </a>
+            </div><!-- .item end 2 -->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (5).jpg" alt="" />
+                    </figure>
+                    <div>
+                        <span>그린풍경</span>
+                        <p>박광진</p>
+                        <p>2020</p>
+                    </div>
+                </a>
+            </div><!-- .item end 3 -->
+        </div><!-- .list end 2-->
+        <div class="list">
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (6).jpg" alt="" />
+                    </figure>
+                    <div>
+                        <span>내재율</span>
+                        <p>김태호(1948)</p>
+                        <p>2010</p>
+                    </div>
+                </a>
+            </div><!-- .item end 1 -->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (7).jpg" alt="" />
+                    </figure>
+                    <div>
+                        <span>서울시립미술관</span>
+                        <p>한성필</p>
+                        <p>2011</p>
+                    </div>
+                </a>
+            </div><!-- .item end 2 -->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (8).jpg" alt="" />
+                    </figure>
+                    <div>
+                        <span>징후 Ⅲ</span>
+                        <p>한기창</p>
+                        <p>2014</p>
+                    </div>
+                </a>
+            </div><!-- .item end 3 -->
+        </div><!-- .list end 3-->
+        <div class="arrow">
+            <div class="arrow_left">
+                <img src="img/왼쪽화살.png" alt="" />
+            </div><!-- .arrow_left end -->
+            <div class="arrow_right">
+                <img src="img/오른쪽화살.png" alt="" />
+            </div><!-- .right end -->
+        </div><!-- .arrow end -->
+    </section><!-- .cont03 end -->
+    <section class="cont04" id="page4">
+        <div class="title">
+            <h4>방문하기</h4>
+        </div><!-- title end -->
+        <div class="list">
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group (7).png" alt="" />
+                    </figure>
+                </a>
+                <p>서울시립미술관 서소문본관</p>
+            </div><!-- .item end 1-->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group-22.png" alt="" />
+                    </figure>
+                </a>
+                <p>서울시립 남서울 미술관</p>
+            </div><!-- .item end 1-->
+            <div class="item">
+                <a href="#">
+                    <figure>
+                        <img src="img/Mask group11.png" alt="" />
+                    </figure>
+                </a>
+                <p>서울시립 북서울미술관</p>
+            </div><!-- .item end 1-->
+        </div><!-- .list end -->
+    </section><!-- .cont04 end -->
+    <section class="cont05">
+        <div class="text_box">
+            <div>
+                <h4>서울시립미술관</h4>
+                <h4>SEOUL MUSEUM OF ART</h4>
+                <p>서울시립미술관은 시대와 미술의 변화에 부응하고,</br>
+                    서로를 채우며 성장해 가는 네트워크 미술관입니다.</p>
+                <a href="#">방문하기</a>
+            </div>
+        </div><!-- .text_box end -->
+    </section><!-- .cont05 end -->
+    <section class="cont06" id="page5">
+        <div class="sitemap">
+            <div class="box01">
+                <div class="item">
+                    <a href="#">
+                        <img src="img/o_typo_b.svg" alt="언더로고" />
+                    </a>
+                </div><!-- .item end 1 -->
+                <div class="item">
+                    <a href="#">
+                        <h4>로그인</h4>
+                        <h4>SeMA 뉴스레터</h4>
+                        <h4>도슨팅앱 다운로드</h4>
+                    </a>
+                </div><!-- .item end 2 -->
+                <div class="item">
+                    <a href="#">
+                        <h4>자주묻는 질문</h4>
+                        <p>• 시립미술관에서 발간한 전시 관련 도서</br>
+                            및 도록은 어디서 구매하나요?
+                        </p>
+                        <p>• 전시실에서 사진 촬영이 가능한가요?
+                        </p>
+                        <p>• 소장품의 수집은 어떻게 이루어지나요?</p>
+                        <p>• 서울시립 미술아카이브는 어떤곳인가요?</p>
+                    </a>
+                </div><!-- .item end 3 -->
+            </div><!-- .box01 end -->
+            <div class="box02">
+                <div class="item">
+                    <a href="#">
+                        <h4>미술관 소개</h4>
+                        <h4>뉴스와 공지</h4>
+                        <h4>지원과 양성</h4>
+                        <h4>시설대관</h4>
+                        <h4>후원회 SeMA人[in]</h4>
+                    </a>
+                </div><!-- .item end 1 -->
+                <div class="item">
+                    <a href="#">
+                        <h4>전시와 프로그램</h4>
+                        <p>전시</p>
+                        <p>교육프로그램</p>
+                        <p>문화행사</p>
+                        <p>오늘부터</p>
+                        <p>이번주말</p>
+                        <p>다음주</p>
+                        <p>과거</p>
+                    </a>
+                </div><!-- .item end 2 -->
+                <div class="item">
+                    <a href="#">
+                        <h4>지식과 연구</h4>
+                        <p>SeMA 소장품</p>
+                        <p>미술아카이브</p>
+                        <p>모두의 연구실 '코랄'</p>
+                        <p>SeMA 도서와 자료</p>
+                    </a>
+                </div><!-- .item end 3 -->
+                <div class="item">
+                    <a href="#">
+                        <h4>방문하기</h4>
+                        <p>서울시립미술관 서소문본관</p>
+                        <p>서울시립 북서울미술관</p>
+                        <p>서울시립 남서울미술관</p>
+                        <p>서울시립 미술아카이브</p>
+                        <p>서울시립 난지미술창작스튜디오</p>
+                        <p>SeMA 창고</p>
+                        <p>SeMA 벙커</p>
+                        <p>SeMA 백남준기념관</p>
+                    </a>
+                </div><!-- .item end 4 -->
+            </div><!-- .box02 end -->
+            <footer>
+            <div class="box03">
+                <div class="item">
+                    <ul>
+                        <li><a href="#"><img src="img/Vector.png" alt="페이스북" /></a></li>
+                        <li><a href="#"><img src="img/Vector-1.png" alt="트위터" /></a></li>
+                        <li><a href="#"><img src="img/Group 4.png" alt="인스타" /></a></li>
+                        <li><a href="#"><img src="img/Vector-4.png" alt="유튜브" /></a></li>
+                        <li><a href="#"><img src="img/Group 5.png" alt="네이버" /></a></li>
+                        <li><a href="#"><img src="img/Vector-8.png" alt="블로그" /></a></li>
+                    </ul>
+                    </a>
+                </div><!-- .item end 1 -->
+                <div class="item">
+                    <a href="#">
+                        <p>서울 중구 덕수궁길 61</p>
+                        <p>02–120, 02–2124–8800</p>
+                        <p>매주 월요일 휴관, 정기휴관(1월 1일)</p>
+                        <p>운영시간 | 직원정보</p>
+                        <p>소통창구 응답소</p>
+                    </a>
+                </div><!-- .item end 2 -->
+                <div class="item">
+                    <a href="#">
+                        <strong>개인정보처리방침</strong>
+                        <p>접근성 안내</p>
+                        <p>이메일무단수집거부</p>
+                        <p>함께한 사람들</p>
+                    </a>
+                </div><!-- .item end 3 -->
+                <div class="item">
+                    <a href="#">
+                        <figure>
+                            <img src="img/image 29.png" alt="" />
+                            <img src="img/image 30.png" alt="" />
+                        </figure>
+                    </a>
+                </div><!-- .item end 4 -->
+            </div><!-- .box03 end -->
+        </footer>
+        </div><!-- .sitemap end -->
+    </section><!-- .cont06 end -->
+    <div class="fixed_icon">
+        <a href="#"><img src="img/검색.png" alt="검색버튼" /></a>
+        <a href="#"><img src="img/탑버튼.png" alt="탑버튼" /></a>
+    </div><!-- .fixed_icon end -->
+</body>
+
+</html>
