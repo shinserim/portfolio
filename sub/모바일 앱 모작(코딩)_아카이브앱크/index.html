@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아카이브앱크</title>
+    <link href="css/아카이브앱크.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+            let mdPick = document.getElementsByClassName('MDpick')[0];
+            let menuBtn = mdPick.getElementsByTagName('li');
+            let mdList = mdPick.getElementsByClassName('list');
+
+            for (let i = 0; i < menuBtn.length; i++) {
+                menuBtn[i].onclick = function () {
+
+                    mdList[0].classList.remove('on');
+                    mdList[1].classList.remove('on');
+                    mdList[2].classList.remove('on');
+
+                    mdList[i].classList.add('on');
+
+
+                    menuBtn[0].classList.remove('on');
+                    menuBtn[1].classList.remove('on')
+                    menuBtn[2].classList.remove('on')
+
+                    menuBtn[i].classList.add('on')
+                }
+            }//for end
+
+            let menuIcon = document.getElementsByClassName('open_menu')[0];
+            let menuIcon2 = document.getElementsByClassName('close_menu')[0];
+            let hdNav = document.getElementsByTagName('nav')[0];
+
+            hdNav.style.display = 'none'
+            menuIcon.onclick = function () {
+                if (hdNav.style.display == 'none') {
+                    hdNav.style.display = 'block'
+                }
+                menuIcon2.onclick = function () {
+                    if (hdNav.style.display == 'block') {
+                        hdNav.style.display = 'none'
+                    }
+                }
+            }//if end
+
+            let depth01 = document.getElementsByClassName('depth01')[0];
+            let depth02 = document.getElementsByClassName('depth02')[0];
+
+            depth02.style.display = 'none'
+            depth01.onclick = function () {
+                if (depth02.style.display == 'none') {
+                    depth02.style.display = 'block'
+                }
+                depth01.onclick = function () {
+                    if (depth02.style.display == 'block') {
+                        depth02.style.display = 'none'
+                    }
+                }
+            }//if end
+
+
+            // let depth01 = document.getElementsByClassName('depth01');
+            // let depth02 = document.getElementsByClassName('depth02')[0];
+            // depth02.style.display = 'none';
+            // hdNav.style.display = 'none'
+            // menuIcon.onclick = function () {
+            //     if (hdNav.style.display == 'none') {
+            //         hdNav.style.display = 'block'
+            //     }
+            //     menuIcon2.onclick = function () {
+            //         if (hdNav.style.display == 'block') {
+            //             hdNav.style.display = 'none'
+            //         }
+            //     }
+
+
+
+            // for (let i = 0; i < depth01.length; i++) {
+            //     console.log(depth02[i]);
+            //     depth02[i].style.display = 'none';
+            // }//for
+
+            // // for (let i = 0; i < depth01.length; i++) {
+            // //     console.log(depth02[i].children)
+            // //     let depth02Children = depth01[i].children[0];
+
+
+            //     depth01[i].onclick = function () {
+            //         if (depth02Children.style.display == 'none') {
+            //             depth02Children.style.display = 'block'
+            //             // depth01[i].children[0].style.color = '#ff0000'
+            //         } else {
+            //             depth02Children.style.display == 'none'
+            //             // depth01[i].children[0].style.color = '#333'
+            //         }
+            //     }
+            
+
+            let project = document.getElementsByClassName('project')[0];
+            let pjItem = project.getElementsByClassName('list');
+
+            let pjPrev = project.getElementsByClassName('prev')[0];
+            let pjNext = project.getElementsByClassName('next')[0];
+            let i = 0;
+
+
+            pjNext.onclick = function () {
+                i++;
+                if (i >= pjItem.length) {
+                    i = pjItem.length - 1
+                }
+                pjItem[0].classList.remove('on');
+                pjItem[1].classList.remove('on');
+                pjItem[2].classList.remove('on');
+
+                pjItem[i].classList.add('on');
+            }
+
+            pjPrev.onclick = function () {
+                i--;
+                if (i <= 0) {
+                    i = 0
+                }
+                pjItem[0].classList.remove('on');
+                pjItem[1].classList.remove('on');
+                pjItem[2].classList.remove('on');
+
+                pjItem[i].classList.add('on');
+            }
+        }//window.onload end
+
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+            <a href="#">
+                <p>Archivépke의 관심: 4월. 10% 할인 > > Click ! !</p>
+            </a>
+        </div><!-- .banner end -->
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    <figure>
+                        <img src="img/logo-ek.167c45739177f7ab71700f2c0b8f5451 1.png" alt="" />
+                    </figure>
+                </a>
+            </h1>
+            <div class="hd_icon">
+                <div class="open_menu">
+                    <figure>
+                        <img src="img/icons8-메뉴-50 1.png" alt="메뉴보기" />
+                    </figure>
+                </div><!-- .open_menu end -->
+                <div class="right_icon">
+                    <figure>
+                        <img src="img/Group.png" alt="검색창" />
+                        <img src="img/Vector.png" alt="쇼핑백" />
+                        <figure>
+                </div><!-- .right_icon end -->
+            </div><!-- .hd_icon end -->
+            <nav>
+                <li class="depth01">
+                    <a href="#">Shop</a>
+                    <div class="close_menu">
+                        <img src="img/icons8-닫기-24 1.png" alt="닫기버튼" />
+                    </div><!-- .close_menu end -->
+                    <ul class="depth02 ">
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Life</a></li>
+                    </ul><!-- depth02 end -->
+                </li><!-- .depth01 end 1-->
+                <li class="depth01">
+                    <a href="#">MD’s PICK</a>
+                </li><!-- depth01 end 2-->
+                <li class="depth01">
+                    <a href="#">Bset</a>
+                </li><!-- depth01 end 3-->
+                <li class="depth01">
+                    <a href="#">Collection</a>
+                </li><!-- depth01 end 4-->
+                <li class="depth01">
+                    <a href="#">Archive</a>
+                </li><!-- depth01 end 5-->
+                <li class="depth01">
+                    <a href="#">Event</a>
+                </li><!-- depth01 end 6-->
+                <li class="depth01">
+                    <a href="#">Issue</a>
+                </li><!-- depth01 end 7-->
+                <li class="depth01 my">
+                    <a href="#">My page</a>
+                </li><!-- depth01 end 8-->
+                <li class="depth01 me">
+                    <a href="#">Login</a>
+                </li><!-- depth01 end 8-->
+        </div>
+        </nav>
+        </div><!-- .inner end -->
+    </header>
+    <main>
+        <section class="main_visual">
+            <figure>
+                <img src="img/Mask group.jpg" alt="메인이미지" />
+            </figure>
+            <figure>
+                <img src="img/Mask group (1).jpg" alt="메인2" />
+            </figure>
+        </section><!-- .main_visual end -->
+        <section class="MDpick">
+            <div class="inner">
+                <ul class="itemmenu">
+                    <li class="on">All</li>
+                    <li>BAG</li>
+                    <li>SHOES</li>
+                </ul><!-- .itemmenu end -->
+                <div class="list on">
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask groupyell.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Archivépke</h4>
+                            <h5>[4월 어텐션!]</h5>
+                            <p>Oval muffin bag<br />(cham
+                                pagne)</p>
+                            <strong>239,000원</strong>
+                            <span>쿠폰</span>
+                        </div><!-- .text end -->
+                    </div><!-- .item end 1-->
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask group-1.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Archivépke</h4>
+                            <h5>[4/21 예약상품]</h5>
+                            <p>Oval lady bag<br />(Vintage
+                                wood)</p>
+                            <strong>349,000원</strong>
+                            <span>예약판매</span>
+                        </div><!-- .text end -->
+                    </div><!-- .item end 2-->
+                </div><!-- .list end 1-->
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/img_6.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Archivépke</h4>
+                            <p>Bubble gum bag<br />(glow
+                                pop pink)</p>
+                            <strong>119,000원</strong>
+                        </div><!-- .text end -->
+                    </div><!-- .item end 1-->
+                    <div class="item">
+                        <figure>
+                            <img src="img/img_5.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Archivépke</h4>
+                            <p>Mini bowling bag<br />(gold
+                                en hour)</p>
+                            <strong>99,000원</strong>
+                            <span><i></i></span>
+                            <span><i></i></span>
+                        </div><!-- .text end -->
+                    </div><!-- .item end 2-->
+                </div><!-- .list end 2-->
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask group-2_2.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Archivépke</h4>
+                            <h5>[4월 어텐션!]</h5>
+                            <p>Weaving clog(Deep
+                                sleep)</p>
+                            <div class="longtext">
+                                <strong>296,100원</strong>
+                                <p>329,000원</p>
+                                <span>10%</span>
+                            </div><!-- .longtext end -->
+                            <span>쿠폰</span>
+                        </div><!-- .text end -->
+                    </div><!-- .item end 1-->
+                    <div class="item">
+                        <figure>
+                            <img src="img/image 7.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Archivépke</h4>
+                            <h5>[4월 어텐션!]</h5>
+                            <p>Weaving clog<br />(Zucchini)</p>
+                            <div class="longtext">
+                                <strong>296,100원</strong>
+                                <p>329,000원</p>
+                                <span>10%</span>
+                            </div><!-- .longtext end -->
+                            <span>쿠폰</span>
+                        </div><!-- .text end -->
+                    </div><!-- .item end 3-->
+                </div><!-- .list end 3 -->
+                <div class="more">
+                    <a href="#">M O R E</a>
+                </div><!-- .more end -->
+            </div><!-- .inner end -->
+        </section><!-- .MDpick end -->
+        <section class="event">
+            <figure>
+                <img src="img/Mask group (2).jpg" alt="이벤트이미지" />
+            </figure>
+        </section><!-- .event end -->
+        <section class="project">
+            <div class="inner">
+                <h3>Archivépke Project</h3>
+                <div class="btn">
+                    <div class="prev"><img src="img/왼쪽화살.png" alt="" /></div>
+                    <div class="next"><img src="img/오른쪽화살.png" alt="" /></div>
+                </div><!-- .btn  -->
+                <div class="list on">
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask group-2.jpg" alt="" />
+                        </figure>
+                        <div>
+                            <h4>전시회<span>001</span>
+                            </h4>
+                            <p>어느날,우리집</p>
+                        </div>
+                    </div><!-- .item end 1-->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask group-3.jpg" alt="" />
+                        </figure>
+                        <div>
+                            <h4>전시회<span>002</span></h4>
+                            <p>잔향 殘響</p>
+                        </div>
+                    </div><!-- .item end 2-->
+                </div><!-- .list end 1-->
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/img2_.jpg" alt="" />
+                        </figure>
+                        <div>
+                            <h4>전시회<span>003</span>
+                            </h4>
+                            <p>내 취향에 따라</p>
+                        </div>
+                    </div><!-- .item end 1-->
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask group (2)_2.jpg" alt="" />
+                        </figure>
+                        <div>
+                            <h4>전시회<span>004</span>
+                            </h4>
+                            <p>‘나만의 리추얼’에 대한 이야기</p>
+                        </div>
+                    </div><!-- .item end 2-->
+                </div><!-- .list end 2-->
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/Mask group__2.jpg" alt="" />
+                        </figure>
+                        <div>
+                            <h4>전시회<span>005</span>
+                            </h4>
+                            <p>내 취향에 따라</p>
+                        </div>
+                    </div><!-- .item end 1-->
+                    <div class="item cont01">
+                        <figure>
+                            <img src="img/Mask group-1_1.jpg" alt="" />
+                        </figure>
+                        <div>
+                            <h4>기부 캠페인</h4>
+                            <p>배우고 공유하기</p>
+                        </div>
+                    </div><!-- .item end 2-->
+                </div><!-- .list end 3-->
+            </div><!-- .inner end -->
+        </section><!-- .project end -->
+    </main>
+    <footer>
+        <div class="footer01">
+            <a href="#">
+                <p>로그인</p>
+            </a>
+            <a href="#">
+                <p>고객센터</p>
+            </a>
+        </div><!-- .footer01 -->
+        <div class="footer02">
+            <p>코오롱인더스트리(주) Fn부문 사업자정보</p>
+            <p>사업자정보확인 <span> | </span>이용약관 <span> | </span>개인정보 처리방침</p>
+            <p>ⓒ Archivépke all rights reserved</p>
+        </div><!-- .footer02 end -->
+        <div class="sns">
+            <a href="#">
+                <img src="img/footer-sns-pc-instagram.6219c2b096bc94b067f2d3c1663d5eb9 2.png" alt="instargram" />
+            </a>
+        </div><!-- .sns end -->
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,492 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Quicksand:wght@500;600;700&display=swap');
+
+/* font-family: 'Noto Nastaliq Urdu', serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Quicksand', sans-serif; */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gmarket Sans TTF';
+    src: url('font/GmarketSansTTFMedium.eot');
+    src: url('font/GmarketSansTTFMedium.eot?#iefix') format('embedded-opentype'),
+        url('font/GmarketSansTTFMedium.woff2') format('woff2'),
+        url('font/GmarketSansTTFMedium.woff') format('woff'),
+        url('font/GmarketSansTTFMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gmarket Sans TTF';
+    src: url('font/GmarketSansTTFLight.eot');
+    src: url('font/GmarketSansTTFLight.eot?#iefix') format('embedded-opentype'),
+        url('font/GmarketSansTTFLight.woff2') format('woff2'),
+        url('font/GmarketSansTTFLight.woff') format('woff'),
+        url('font/GmarketSansTTFLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gmarket Sans TTF';
+    src: url('font/GmarketSansTTFBold.eot');
+    src: url('font/GmarketSansTTFBold.eot?#iefix') format('embedded-opentype'),
+        url('font/GmarketSansTTFBold.woff2') format('woff2'),
+        url('font/GmarketSansTTFBold.woff') format('woff'),
+        url('font/GmarketSansTTFBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    color: #000;
+    line-height: 1;
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+header {
+    height: 90px;
+}
+
+header .banner {
+    height: 35px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    line-height: 21px;
+    font-size: 13px;
+}
+
+header .inner h1 {
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .inner h1 figure {
+    width: 140px;
+    height: 30px;
+}
+
+header .inner h1 figure img {
+    width: 100%;
+    height: 100%;
+}
+
+header .inner .hd_icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 12px 20px;
+    cursor: pointer;
+}
+
+header .inner .hd_icon .right_icon img:first-child {
+    margin-right: 20px;
+}
+
+header .inner .hd_icon .open_menu figure {
+    width: 30px;
+    height: 30px;
+}
+
+header .inner .hd_icon .open_menu figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .inner .hd_icon .right_icon figure img {
+    width: 23px;
+    height: 23px;
+}
+
+header .inner nav {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border: 1px #333 solid;
+}
+
+/* main_visual */
+
+.main_visual {
+    height: 100%;
+    width: 100%;
+}
+
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual figure:nth-child(2) {
+    margin-top: 40px;
+}
+
+/* nav */
+nav {
+    position: relative;
+    display: none;
+    cursor: pointer;
+    font-family: 'Gmarket Sans TTF';
+
+
+}
+
+nav>.depth01 {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+nav .depth01 img {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+
+nav .depth02 li:nth-child(1) {
+    font-weight: 500;
+}
+
+nav .depth02 li {
+    margin: 25px 0;
+    margin-left: 60px;
+    color: #838383;
+
+}
+
+nav .mypage {
+    margin-top: 60px;
+    margin-left: 20px;
+    color: #636363;
+}
+
+nav .depth01.my {
+    color: #838383;
+    padding-top: 50px;
+}
+
+nav .depth01.me {
+    color: #838383;
+}
+
+.MDpick .inner {
+    padding: 0 20px;
+}
+
+.MDpick .inner .itemmenu li {
+    display: inline-block;
+    padding: 30px 0 10px;
+    padding-right: 15px;
+    font-size: 15px;
+    font-family: 'Gmarket Sans TTF';
+    color: #838383;
+    cursor: pointer;
+}
+
+.MDpick .inner li.on {
+    color: #333;
+}
+
+/* .MDpick .inner .itemmenu li:nth-child(1) {
+    color: #333;
+} */
+.MDpick .inner .list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: none;
+}
+
+.MDpick .inner .list.on {
+    display: flex;
+}
+
+.MDpick .inner .list .item {
+    width: calc(100% / 2 - 5px);
+}
+
+.MDpick .inner .list .item figure {
+    height: 280px;
+    width: 100%;
+}
+
+.MDpick .inner .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.MDpick .inner .list .item .text h5 {
+    color: #194560;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.MDpick .inner .list .item .text h4 {
+    font-size: 13px;
+    color: #838383;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.MDpick .inner .list .item .text strong {
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Gmarket Sans TTF';
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.MDpick .inner .list .item .text p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    height: 50px;
+    font-family: 'Gmarket Sans TTF';
+    line-height: 1.3;
+}
+
+.MDpick .inner .list .item .text>span {
+    font-size: 12px;
+    background-color: #83838335;
+    color: #194560;
+    padding: 3px;
+}
+
+.MDpick .inner .list:nth-child(3) .item .text>span {
+    background-color: #FF4D00;
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.MDpick .inner .list:nth-child(3) .item .text span:nth-of-type(2) {
+    background-color: antiquewhite;
+    margin-left: -3px;
+}
+
+.MDpick .inner .list .item .text .longtext {
+    display: flex;
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Gmarket Sans TTF';
+}
+
+.MDpick .inner .list .item .text .longtext strong {
+    margin-right: 5px;
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+.MDpick .inner .list .item .text .longtext p {
+    margin-right: 5px;
+    color: #838383;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.MDpick .inner .list .item .text .longtext span {
+    color: #FF4D00;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.MDpick .inner .more {
+    text-align: center;
+    border: #333 1px solid;
+    padding: 12px 0;
+    margin-bottom: 45px;
+    margin: 50px 0 20px;
+    font-family: 'Gmarket Sans TTF';
+    font-size: 14px;
+}
+
+.event {
+    margin-bottom: 45px;
+}
+
+.event figure {
+    width: 100%;
+}
+
+.event figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project .inner h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    padding: 0 20px;
+}
+
+.project .inner {
+    position: relative;
+}
+
+.project .inner .list.on {
+    display: flex;
+}
+
+.project .inner .list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: calc(100% - 35px);
+    display: none;
+}
+
+.project .inner .list .item {
+    width: calc(100% / 2 - 2px);
+    position: relative;
+}
+
+.project .inner .list .item figure {
+    width: 100%;
+    height: 220px;
+}
+
+.project .inner .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project .inner .list .item h4>span {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-family: 'Gmarket Sans TTF';
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.project .inner .list .item p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #636363;
+    margin-bottom: 20px;
+}
+
+.project .inner .list .item div h4 {
+    margin-top: 10px;
+    margin-right: 5px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.project .inner .list .item.cont01 div p {
+    margin-top: 10px;
+}
+.btn {
+    z-index: 1;
+    cursor: pointer;
+}
+.btn .prev {
+    position: absolute;
+    top: 40%;
+    left: -5px;
+}
+
+.btn .next {
+    position: absolute;
+    top: 40%;
+    right: -5px;
+}
+.btn img {
+    width: 22px;
+    height:22px
+}
+
+/* footer */
+footer {
+    height: 350px;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    border-top: #838383a7 solid 1px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.footer01 {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.footer01 p {
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer01 p::before {
+    content: '';
+    background: url(../img/밑화살.png);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 26%;
+    left: 78%;
+    display: block;
+}
+
+.footer02>p {
+    margin: 35px 0 20px;
+
+}
+
+.footer02 p:nth-child(2) span {
+    padding: 0 10px;
+}
