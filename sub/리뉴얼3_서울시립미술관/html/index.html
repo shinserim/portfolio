@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서울시립미술관</title>
     <link href="css/서울시립미술관.css" rel="stylesheet" />
+    <script src="main.js"></script>
+    <script src="lib/jquery-3.7.0.min.js"></script>
 </head>
-<script src="lib/jquery-3.7.0.min.js"></script>
+
 <script>
     $(function () {
         let menuBtn = $('.left_menu li');
@@ -60,7 +62,7 @@
             //스크롤 했을 때 각 cont에게 스크롤이 들어오면
             //nav li 에게 클래스명 제어
 
-            if ($('.main_visual').offset().top <= scrollBar) {
+            if ($('.banner').offset().top  <= scrollBar) {
                 leftM.removeClass('on')
                 leftM.eq(0).addClass('on');
             }
@@ -68,17 +70,17 @@
                 leftM.removeClass('on')
 
             }
-            if ($('.cont01').offset().top <= scrollBar) {
+            if ($('.cont01').offset().top <= scrollBar + 300) {
                 leftM.removeClass('on')
                 leftM.eq(1).addClass('on');
             }
 
-            if ($('.cont03').offset().top <= scrollBar) {
+            if ($('.cont03').offset().top <= scrollBar + 300) {
                 leftM.removeClass('on')
                 leftM.eq(2).addClass('on');
             }
 
-            if ($('.cont04').offset().top <= scrollBar) {
+            if ($('.cont04').offset().top <= scrollBar + 300) {
                 leftM.removeClass('on')
                 leftM.eq(3).addClass('on');
             }
@@ -178,6 +180,44 @@
 
 
         }//onscroll
+
+        let menuIcon = document.getElementsByClassName('menu_icon')[0];
+        let menuIcon2 = document.getElementsByClassName('close_menu')[0];
+        let hdNav = document.getElementsByTagName('nav')[0];
+         let bodyHeight = document.getElementsByTagName('body')[0];
+
+        hdNav.style.display = 'none'
+        menuIcon.onclick = function () {
+            if (hdNav.style.display == 'none') {
+                hdNav.style.display = 'block'
+                bodyHeight.style.paddingTop = '150px'
+            }
+            menuIcon2.onclick = function () {
+                if (hdNav.style.display == 'block') {
+                    hdNav.style.display = 'none'
+                    bodyHeight.style.paddingTop = '0'
+                }
+            }
+        }//manu end
+
+        let searchIcon = document.getElementsByClassName('searchicon01')[0];
+        let searchIcon2 = document.getElementsByClassName('searchicon02')[0];
+        let search = document.getElementsByClassName('search')[0];
+        
+
+        search.style.display = 'none'
+        searchIcon.onclick = function () {
+            if (search.style.display == 'none') {
+                search.style.display = 'block'
+            }
+            searchIcon2.onclick = function () {
+                if (search.style.display == 'block') {
+                    search.style.display = 'none'
+                }
+            }
+        }//search end
+
+
         // let cont01 = document.getElementsByClassName('cont01')[0];
         let cont01Item = cont01.getElementsByClassName('list');
         let cont01Prev = cont01.getElementsByClassName('arrow_left')[0];
@@ -238,7 +278,7 @@
 </script>
 
 <body>
-    <section class="banner">
+    <section class="banner" id="page1">
         <h2>
             <a href="#">
                 <img src="img/seoul-logo-white 2.png" alt="서울시로고" />
@@ -272,20 +312,50 @@
                     <img src="img/Group.png" alt="미술관로고" />
                 </a>
             </h1>
-            <nav>
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">전시와 프로그램</a></li>
-                    <li><a href="#">지식과 연구</a></li>
-                    <li><a href="#">방문하기</a></li>
-                    <li><a href="#"><span>로그인</span></a></li>
-                    <li><a href="#"><span>사이트맵</span></a></li>
-                    <li><a href="#">EN</a></li>
-                </ul>
-            </nav>
+            <ul class="f_menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">전시와 프로그램</a></li>
+                <li><a href="#">지식과 연구</a></li>
+                <li><a href="#">방문하기</a></li>
+                <li><a href="#"><span>로그인</span></a></li>
+                <li><a href="#"><span>사이트맵</span></a></li>
+                <li><a href="#">EN</a></li>
+            </ul><!-- .menu end -->
         </div><!-- .inner end -->
     </header>
-    <section class="main_visual" id="page1">
+    <nav>
+        <div class="close_menu">
+            <div>
+                <img src="img/icons8-닫기-24 1.png" alt="닫기버튼" />
+            </div>
+        </div><!-- .close_menu end -->
+        <div class="mobile_menu">
+            <ul class="left">
+                <li class="depth01">
+                    <a href="#">전시와 프로그램</a>
+                </li><!-- depth01 end 2-->
+                <li class="depth01">
+                    <a href="#">지식과 연구</a>
+                </li><!-- depth01 end 3-->
+                <li class="depth01">
+                    <a href="#">방문하기</a>
+                </li><!-- depth01 end 4-->
+            </ul>
+            <ul class="right">
+                <li class="depth01 h">
+                    <a href="#">로그인</a>
+                </li><!-- depth01 end 5-->
+                <li class="depth01 h">
+                    <a href="#">사이트맵</a>
+                </li><!-- depth01 end 7-->
+                <li class="depth01">
+                    <a href="#"><span>EN</span></a>
+                </li><!-- depth01 end 8-->
+            </ul>
+        </div><!-- .mobile_menu end -->
+    </nav>
+
+    <section class="main_visual">
         <video autoplay muted loop>
             <source src="img/main_video.mp4" type="video/mp4" />
         </video>
@@ -794,9 +864,84 @@
         </div><!-- .sitemap end -->
     </section><!-- .cont06 end -->
     <div class="fixed_icon">
-        <a href="#"><img src="img/검색.png" alt="검색버튼" /></a>
+        <a href="javascript:void(0);"><img class="searchicon01" src="img/검색.png" alt="검색버튼" /></a>
         <a href="#"><img src="img/탑버튼.png" alt="탑버튼" /></a>
     </div><!-- .fixed_icon end -->
+    <div class="search">
+        <div>
+            <h2>서울시립미술관 스마트 검색</h2>
+            <img class="searchicon02" src="img/icons8닫기.png"/>
+        </div>
+        <div class="inner">
+            <div class="search_box">
+                <input type="text" />
+                <button>검색</button>
+            </div>
+            <div class="checkbox_name">
+                <div class="where">
+                    <label>어디서</label>
+                    <div class="01">
+                        <input type="checkbox" name="drink" value="americano" checked />
+                        <span>온라인</span>
+                    </div><!-- .01 end -->
+                    <div class="01">
+                        <input type="checkbox" name="drink" value="americano" checked />
+                        <span>서울시립미술관 서소문본관</span>
+                    </div><!-- .01 end -->
+                    <div class="01">
+                        <input type="checkbox" name="drink" value="americano" checked />
+                        <span>서울시립 북서울미술관</span>
+                    </div><!-- .01 end -->
+                    <div class="01">
+                    <input type="checkbox" name="drink" value="americano" checked />
+                    <span>서울시립 남서울미술관</span>
+                </div><!-- .01 end -->
+                </div><!-- .where end -->
+                <!-- 한개 선택시 라디오, 여러개 선택해야 할 경우 체크박스 사용 -->
+                <!-- name은 동일한 이름을 써줘서 같은 그룹으로 만들고
+                value는 다름 이름으로 써줘서 구분짓게 함-->
+                <!-- name => 그룹이름
+                     value => 개인이름 -->
+                <div class="what">
+                    <label>무엇을</label>
+                    <div class="01">
+                        <input type="checkbox" name="drink" value="americano" checked />
+                        <span>전시</span>
+                    </div><!-- .01 end -->
+                    <div class="01">
+                        <input type="checkbox" name="drink" value="americano" checked />
+                        <span>교육프로그램</span>
+                    </div><!-- .01 end -->
+                    <div class="01">
+                        <input type="checkbox" name="drink" value="americano" checked />
+                        <span>문화행사</span>
+                    </div><!-- .01 end -->
+                </div><!-- .what end -->
+                <div class="when">
+                    <label>언제</label>
+                    <div class="01">
+                    <input type="radio" name="send" value="message" checked />
+                    <span>오늘부터</span>
+                </div><!-- .01 end -->
+                <div class="01">
+                    <input type="radio" name="send" value="message" checked />
+                    <span>이번주말</span>
+                </div><!-- .01 end -->
+                <div class="01">
+                    <input type="radio" name="send" value="message" checked />
+                    <span>다음주</span>
+                </div><!-- .01 end -->
+                <div class="01">
+                    <input type="radio" name="send" value="message" checked />
+                    <span>과거</span>
+                </div><!-- .01 end -->
+                </div><!-- .when end -->
+            </div><!-- .checkbox_name end -->
+            <div>
+                <a href="#">더보기</a>
+            </div>
+        </div><!-- .inner end -->
+    </div><!-- .search end -->
 </body>
 
 </html>
