@@ -1,5 +1,17 @@
 $(function () {
 
+    
+ //스플래시 화면(로딩페이지)
+ let loadingPage = document.getElementById('loading');
+ //일정시간 뒤에 실행 -> setTimeout()
+ setTimeout(function () {
+     loadingPage.style.opacity = '0';
+     loadingPage.style.transition = '1.5s';
+     // loadingPage.style.transform = 'translateX(-100%)';
+     loadingPage.style.transform = 'scale(0)';
+     // loadingPage.style.zIndex = '-1';
+
+ }, 1000)//2초뒤에 실행
     let bar = $('.bar img');
     let bar1 = $('.bar');
 
@@ -80,11 +92,11 @@ $(function () {
         }
 
         let aniMate = $('.progress-moved');
-        let prosessTop = aniMate.offset().top;
-        console.log(headerTop) //0
+        let prosessTop = aniMate.offset().top - 800;
+        console.log(scrollBar) //0
 
 
-        if (headerTop < scrollBar + 300 ) {
+        if (prosessTop < scrollBar) {
             aniMate.addClass('on');
         }
         else {
@@ -93,19 +105,9 @@ $(function () {
 
     })//scroll()
 
-    window.onload = function () {
 
-        //스플래시 화면(로딩페이지)
-        let loadingPage = document.getElementById('loading');
-        //일정시간 뒤에 실행 -> setTimeout()
-        setTimeout(function () {
-            loadingPage.style.opacity = '0';
-            loadingPage.style.transition = '1.5s';
-            // loadingPage.style.transform = 'translateX(-100%)';
-            loadingPage.style.transform = 'scale(0)';
-            // loadingPage.style.zIndex = '-1';
 
-        }, 1000)//2초뒤에 실행
+       
 
         //li의 넓이값
         let tabMenuWidth = menu.outerWidth();
@@ -136,6 +138,7 @@ $(function () {
 
         }); //menu.click
 
+
         //slide
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
@@ -148,6 +151,6 @@ $(function () {
         });
         AOS.init();
 
-    }//window.onload
+
 })//jquery end
 
