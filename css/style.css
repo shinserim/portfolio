@@ -137,7 +137,6 @@ body {
   font-size: 60px;
   transform: translate(0, -50%);
   text-align: center;
-  font-family: 'Inter';
 }
 
 .splash .line {
@@ -148,7 +147,7 @@ body {
   z-index: 999999;
   top: 50%;
   transform: translateY(-50%);
-  animation: line 2s 0.5s;
+  animation: line 2s;
   
 }
 
@@ -450,25 +449,25 @@ nav ul li a {
 }
 
 .progress-moved.on .progress-bar1 {
-  width: 80%;
+  width: 85%;
   background-color: #8192E2;
   animation: progressAnimation 6s;
 }
 
 .progress-moved.on .progress-bar2 {
-  width: 80%;
+  width: 85%;
   background-color: #8192E2;
   animation: progressAnimation 6s;
 }
 
 .progress-moved.on .progress-bar3 {
-  width: 60%;
+  width: 70%;
   background-color: #8192E2;
   animation: progressAnimation 6s;
 }
 
 .progress-moved.on .progress-bar4 {
-  width: 70%;
+  width: 85%;
   background-color: #8192E2;
   animation: progressAnimation 6s;
 }
